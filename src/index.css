@@ -143,3 +143,14 @@ body, .app {
   border: 0;
   outline: none;
 }
+
+.add-contact {
+  display: block;
+  width: 73px;
+  background: white;
+  background-image: url('./icons/person-add.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+  font-size: 0;
+}
