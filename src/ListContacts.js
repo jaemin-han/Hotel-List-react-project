@@ -34,7 +34,7 @@ class ListContacts extends Component {
           <input
             className='search-contacts'
             type='text'
-            placeholder='Search Contacts'
+            placeholder='Search Hotels'
             value={query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
