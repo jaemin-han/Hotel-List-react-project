@@ -13,9 +13,8 @@ class CreateContact extends Component {
         if (this.props.onCreateContact) {
             this.props.onCreateContact(values)
         }
-    }
-
-   render() {
+    };
+    render() {
         return (
             <div>
                 <Link
