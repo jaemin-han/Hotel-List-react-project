@@ -10,7 +10,3 @@ ReactDOM.render(
     <App />
   </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();
-
-// Test
-// Test 2
-// Test3g
