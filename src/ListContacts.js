@@ -54,6 +54,16 @@ class ListContacts extends Component {
         <ol className='contact-list'>
           {showingContacts.map((contact) => (
             <li key={contact.id} className='contact-list-item'>
+              <div className='contact-name'>
+                <p><b>Hotel:</b>&nbsp;{contact.name}</p>
+                <button
+                  onClick={() => onDeleteContact(contact)}
+                  className='contact-remove'>
+                    Remove
+                </button>
+              </div>
+
+
               <div
                 className='contact-avatar'
                 style={{
@@ -61,14 +71,9 @@ class ListContacts extends Component {
                 }}
               ></div>
               <div className='contact-details'>
-                <p>{contact.name}</p>
-                <p>{contact.handle}</p>
+                <p><b>Website:</b>&nbsp;<span className='contact-website'>{contact.handle}</span></p>
+                <p>Description Placeholder</p>
               </div>
-              <button
-                onClick={() => onDeleteContact(contact)}
-                className='contact-remove'>
-                  Remove
-              </button>
             </li>
           ))}
         </ol>
