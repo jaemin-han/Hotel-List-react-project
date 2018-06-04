@@ -4,7 +4,7 @@ import ImageInput from './ImageInput'
 import serializeForm from 'form-serialize'
 
 class CreateContact extends Component {
-
+    // HandleSubmit Method* 
     handleSubmit = (e) => {
         e.preventDefault()
         const values = serializeForm(e.target, { hash: true })
@@ -22,6 +22,7 @@ class CreateContact extends Component {
                     to="/">
                         Close
                 </Link>
+                {/* Whenever the input field is changed, pass the handleSubmit method into onSubmit attribute */}
                 <form onSubmit={this.handleSubmit} className="create-contact-form">
                     <ImageInput
                         className="create-contact-avatar-input"

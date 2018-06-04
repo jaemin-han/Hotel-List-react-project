@@ -16,7 +16,14 @@ class App extends Component {
         }))
       })
   }
+
+  // method (removeContact) living in app and not in ListContacts is because the data lives in the componentDidMount
   removeContact = (contact) => {
+    // Passing in a function and returning an object. Object that is returned is going to merge with the currentState.
+    // First argument to the function - pass current state.
+    // If not updating the state of the component based on the currentstate, then use the object setState.
+    // Always just use functional setState
+    // passes the currentState of your component - use functional setState
     this.setState((currentState) => ({
       contacts: currentState.contacts.filter((c) => {
         return c.id !== contact.id
@@ -33,13 +40,24 @@ class App extends Component {
         }))
       })
   }
+
+  // While a component can set its state when it initializes, we expect that state to change over time, usually due to user input.
+  // The component is able to change its own internal state using this.setState(). Each time state is changed, React knows and will call 'render()'
+  // to re-render the component. This allows for fast, efficient updates to app's UI
+
+
   // Creating different Routes
   render() {
     return (
       <div>
         <Route exact path='/' render={() => (
           <ListContacts
+            // function invocation
+            // Pass data as argument when invoking the function 
+            // Data to a component - pass data as 'prop'
+            // Pass 'contacts' state data from the ContactsAPI
             contacts={this.state.contacts}
+            // Pass down a function to invoke later on
             onDeleteContact={this.removeContact}
           />
         )} />
@@ -57,3 +75,6 @@ class App extends Component {
 }
 
 export default App
+
+// React compares the previous output and new output, determines what has changed, and makes these decisions for us. 
+// This process of determining what has changed in the previous and new outputs is called Reconciliation
