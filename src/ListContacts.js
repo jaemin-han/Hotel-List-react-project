@@ -39,11 +39,8 @@ class ListContacts extends Component {
       // But not empty string, then filter
       : contacts.filter((c) => (
           c.name.toLowerCase().includes(query.toLowerCase())
-
           // Need to figure out a way to only filter based on (capitalized) first character
           // c.name.toUpperCase().includes(query.toUpperCase(0))
-          
-
         ))
 
     return (
@@ -98,7 +95,7 @@ class ListContacts extends Component {
               ></div>
               <div className='contact-details'>
                 <p><b>Website:</b>&nbsp;<span className='contact-website'>{contact.handle}</span></p>
-                <p>Description Placeholder</p>
+                <p>Description: &nbsp;<span className='contact-website'>{contact.description}</span></p>
               </div>
             </li>
           ))}

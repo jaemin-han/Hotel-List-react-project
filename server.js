@@ -51,9 +51,9 @@ app.delete('/contacts/:id', (req, res) => {
 })
 
 app.post('/contacts', bodyParser.json(), (req, res) => {
-  const { name, handle } = req.body
+  const { name, handle, description } = req.body
 
-  if (name && handle) {
+  if (name && handle && description) {
     res.send(contacts.add(req.token, req.body))
   } else {
     res.status(403).send({

@@ -9,25 +9,29 @@ const defaultData = {
       id: 'sheraton_nola',
       name: 'Sheraton New Orleans',
       handle: 'spg@starwood.com',
-      avatarURL: config.origin + '/hotel1.jpg'
+      avatarURL: config.origin + '/hotel1.jpg',
+      description: "Description"
     },
     {
       id: 'hiltonmidtown',
       name: 'Hilton Midtown',
       handle: 'hilton@hilton.com',
-      avatarURL: config.origin + '/hotel2.jpg'
+      avatarURL: config.origin + '/hotel2.jpg',
+      description: "PLEASE Description"
     },
     {
       id: 'wchicago',
       name: 'W Chicago',
       handle: 'wchicagospg@starwood.com',
-      avatarURL: config.origin + '/hotel3.jpg'
+      avatarURL: config.origin + '/hotel3.jpg',
+      description: "TESTING ONE TWO Description"
     },
     {
       id: 'ritzcarltonnola',
       name: 'Ritz Carlton New Orleans',
       handle: 'ritznola@starwood.com',
-      avatarURL: config.origin + '/hotel4.jpg'
+      avatarURL: config.origin + '/hotel4.jpg',
+      description: "PLEASE"
     }
   ]
 }

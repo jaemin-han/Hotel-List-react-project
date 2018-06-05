@@ -17,10 +17,8 @@ class CreateContact extends Component {
     render() {
         return (
             <div>
-                <Link
-                    className="close-create-contact"
-                    to="/">
-                        Close
+                <Link className="close-create-contact" to="/">
+                    Close
                 </Link>
                 {/* Whenever the input field is changed, pass the handleSubmit method into onSubmit attribute */}
                 <form onSubmit={this.handleSubmit} className="create-contact-form">
@@ -32,11 +30,11 @@ class CreateContact extends Component {
                     <div className="create-contact-details">
                         <input type="text" name="name" placeholder="Name"/>
                         <input type="text" name="handle" placeholder="Handle"/>
+                        <input type="text" name="description" placeholder="Description"/>
                         <button>Add Contact</button>
                     </div>
                 </form>
             </div>
-
         )
     }
 }

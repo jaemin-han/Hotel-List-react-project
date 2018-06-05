@@ -11,9 +11,7 @@ class App extends Component {
   componentDidMount() {
     ContactsAPI.getAll()
       .then((contacts) => {
-        this.setState(() => ({
-          contacts
-        }))
+        this.setState(() => ({ contacts }))
       })
   }
 
@@ -35,9 +33,7 @@ class App extends Component {
   createContact = (contact) => {
     ContactsAPI.create(contact)
       .then((contact) => {
-        this.setState((currentState) => ({
-          contacts: currentState.contacts.concat([contact])
-        }))
+        this.setState((currentState) => ({ contacts: currentState.contacts.concat([contact]) }))
       })
   }
 
@@ -48,6 +44,10 @@ class App extends Component {
 
   // Creating different Routes
   render() {
+
+    // Get all state and prop perperties
+    const { contacts } = this.state
+
     return (
       <div>
         <Route exact path='/' render={() => (
@@ -56,7 +56,7 @@ class App extends Component {
             // Pass data as argument when invoking the function 
             // Data to a component - pass data as 'prop'
             // Pass 'contacts' state data from the ContactsAPI
-            contacts={this.state.contacts}
+            contacts={contacts}
             // Pass down a function to invoke later on
             onDeleteContact={this.removeContact}
           />
