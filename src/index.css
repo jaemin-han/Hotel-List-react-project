@@ -18,6 +18,17 @@ body, .app {
   background: #f5f5f5;
 }
 /* CreateContact */
+
+.create-modal_container {
+  /* overflow: hidden; */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: papayawhip;
+}
+
 .close-create-contact {
   display: block;
   width: 60px;
