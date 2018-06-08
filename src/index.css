@@ -63,12 +63,12 @@ body, .app {
   font-size: inherit;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc;
   outline: 0; }
 
 .create-contact-details button {
   margin-top: 20px;
-  background: #ccc;
+  background: #cccccc;
   padding: 10px;
   text-transform: uppercase;
   font-size: inherit;
@@ -113,7 +113,7 @@ body, .app {
   margin: 20px 0; }
 
 .showing-contacts button {
-  color: blue;
+  color: #015e9f;
   background: transparent;
   border: none;
   cursor: pointer;

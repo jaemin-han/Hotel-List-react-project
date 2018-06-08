@@ -6,7 +6,10 @@ $color-white: #ffffff;
 $color-black: #000000;
 
 //Background Colors
+$color-background: #ffffff;
 $color-background-touch: #f5f5f5;
+$color-background-border: #d5d8df;
+$color-link: #015e9f;
 $color-tomato: tomato;
 
 html {
@@ -39,7 +42,6 @@ body, .app {
   bottom: 0px;
   background-color: $color-background-touch;
 }
-
 .close-create-contact {
   display: block;
   width: 60px;
@@ -76,12 +78,12 @@ body, .app {
   font-size: inherit;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $color-gray-light;
   outline: 0;
 }
 .create-contact-details button {
   margin-top: 20px;
-  background: #ccc;
+  background: $color-gray-light;
   padding: 10px;
   text-transform: uppercase;
   font-size: inherit;
@@ -97,7 +99,7 @@ body, .app {
   position: fixed;
   width: 100%;
   top: 0;
-  border-bottom: 1px solid #d5d8df;
+  border-bottom: 1px solid $color-background-border;
   display: flex;
 }
 .search-contacts {
@@ -126,7 +128,7 @@ body, .app {
   margin: 20px 0;
 }
 .showing-contacts button {
-  color: blue;
+  color: $color-link;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -155,7 +157,7 @@ body, .app {
   padding: 20px;
   margin: 20px 12px 20px 30px;
   background: $color-white;
-  border: 1px solid #d5d8df;
+  border: 1px solid $color-background-border;
 }
 .contact-name {
   display: flex;
