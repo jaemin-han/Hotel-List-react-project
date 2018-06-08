@@ -12,14 +12,6 @@ app.use(cors())
 app.get('/', (req, res) => {
   const help = `
   <pre>
-    Welcome to the Address Book API!
-
-    Use an Authorization header to work with your own data:
-
-    fetch(url, { headers: { 'Authorization': 'whatever-you-want' }})
-
-    The following endpoints are available:
-
     GET /contacts
     DELETE /contacts/:id
     POST /contacts { name, email, avatarURL }
@@ -62,6 +54,7 @@ app.post('/contacts', bodyParser.json(), (req, res) => {
   }
 })
 
+// Listen to 'config.js' for port number and origin
 app.listen(config.port, () => {
   console.log('Server listening on port %s, Ctrl+C to stop', config.port)
 })
