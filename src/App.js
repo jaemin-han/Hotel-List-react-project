@@ -61,14 +61,19 @@ class App extends Component {
             onDeleteContact={this.removeContact}
           />
         )} />
-        <Route path='/create' render={({ history }) => (
-          <CreateContact
-            onCreateContact={(contact) => {
-              this.createContact(contact)
-              history.push('/')
-            }}
-          />
-        )} />
+
+
+        {/* <Modal> */}
+          <Route path='/create' render={({ history }) => (
+            <CreateContact
+              onCreateContact={(contact) => {
+                this.createContact(contact)
+                history.push('/')
+              }}
+            />
+          )} />
+        {/* </Modal> */}
+
       </div>
     )
   }
