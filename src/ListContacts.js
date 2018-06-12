@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 class ListContacts extends Component {
-  // Adding propTypes property
+  // Adding propTypes property on class - same object
   static propTypes = {
     contacts: PropTypes.array.isRequired,
     onDeleteContact: PropTypes.func.isRequired,
@@ -14,12 +14,14 @@ class ListContacts extends Component {
   // IMPORTANT: Having state outside the constructor() means it is a class field, which is a proposal for a new change to the language. 
   // It currently is not supported by JS, but babel's transpiling - we can do it
 
-  // Adding state property
+  // Adding state property to the component style
   state = {
     query: ''
   }
 
-  // Updating the state (value) below 
+  // Updating the state (value) below
+  // Take in 'query'
+  // .Trim() - removes whitespace from both ends of a string  
   updateQuery = (query) => {
     this.setState(() => ({
       query: query.trim()
@@ -45,15 +47,18 @@ class ListContacts extends Component {
 
     return (
       <div className='list-contacts'>
+        {/* {JSON.stringify(this.state)}  testing value as I type */}
         <div className='list-contacts-top'>
           <input
             className='search-contacts'
             type='text'
             placeholder='Search Hotels'
-
+            
+            // Two New Properties
             // Value is whatever
             value={query}
             // Invoking the arrow function passing the event passing 'updateQuery'
+            // Need to install these packages... to filter...npm install --save escape-string-regexp sort-by
             onChange={(event) => this.updateQuery(event.target.value)}
           />
           <Link
@@ -76,7 +81,7 @@ class ListContacts extends Component {
                 <p><b>Hotel:</b>&nbsp;{contact.name}</p>
                 <button
                   // Whenever the button is being clicked on, go ahead and invoke the arrow function below.
-                  // Remove contact that we are mapping over
+                  // Remove contact that we are mapping over which `contact`
                   onClick={() => onDeleteContact(contact)}
                   className='contact-remove'>
                     Remove

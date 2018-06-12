@@ -57,7 +57,9 @@ class App extends Component {
             // Data to a component - pass data as 'prop'
             // Pass 'contacts' state data from the ContactsAPI
             contacts={contacts}
-            // Pass down a function to invoke later on
+            // Pass function down to invoke later on
+            // onDeleteContact property that will reference removeContact method
+            // Inside ListContacts component, invoke this onDeleteContact property
             onDeleteContact={this.removeContact}
           />
         )} />
