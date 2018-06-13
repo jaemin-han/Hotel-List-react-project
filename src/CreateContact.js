@@ -31,6 +31,7 @@ class CreateContact extends Component {
                         <div className="create-contact-details">
                             <input type="text" name="name" placeholder="Name"/>
                             <input type="text" name="handle" placeholder="Handle"/>
+                            <input type="date" name="date" placeholder="Date" />
                             <input type="text" name="description" placeholder="Description"/>
                             <button>Add Contact</button>
                         </div>

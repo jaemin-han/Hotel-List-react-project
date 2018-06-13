@@ -38,7 +38,7 @@ class ListContacts extends Component {
     const showingContacts = query === ''
       // If no input detacted, show all contact hotels
       ? contacts
-      // But not empty string, then filter
+      // Filter based on user's input
       : contacts.filter((c) => (
           c.name.toLowerCase().includes(query.toLowerCase())
           // Need to figure out a way to only filter based on (capitalized) first character
@@ -78,7 +78,7 @@ class ListContacts extends Component {
           {showingContacts.map((contact) => (
             <li key={contact.id} className='contact-list-item'>
               <div className='contact-name'>
-                <p><b>Hotel:</b>&nbsp;{contact.name}</p>
+                <p><b>Hotel Name:</b>&nbsp;{contact.name}</p>
                 <button
                   // Whenever the button is being clicked on, go ahead and invoke the arrow function below.
                   // Remove contact that we are mapping over which `contact`
@@ -99,8 +99,9 @@ class ListContacts extends Component {
                 }}
               ></div>
               <div className='contact-details'>
-                <p><b>Website:</b>&nbsp;<span className='contact-website'>{contact.handle}</span></p>
-                <p>Description: &nbsp;<span className='contact-website'>{contact.description}</span></p>
+                <p><b>Hotel Website:</b>&nbsp;<span className='contact-website'>{contact.handle}</span></p>
+                <p><b>Date Visited:</b>&nbsp;<span className='contact-website'>{contact.date}</span></p>
+                <p><b>Hotel Description:</b> &nbsp;<span className='contact-website'>{contact.description}</span></p>
               </div>
             </li>
           ))}
