@@ -27,9 +27,9 @@ class App extends Component {
         return c.id !== contact.id
       })
     }))
-
     ContactsAPI.remove(contact)
   }
+
   createContact = (contact) => {
     ContactsAPI.create(contact)
       .then((contact) => {
@@ -66,7 +66,7 @@ class App extends Component {
 
 
         {/* <Modal> */}
-          <Route path='/create' render={({ history }) => (
+          <Route path='/newhotel' render={({ history }) => (
             <CreateContact
               onCreateContact={(contact) => {
                 this.createContact(contact)

@@ -21,7 +21,7 @@ class ListContacts extends Component {
 
   // Updating the state (value) below
   // Take in 'query'
-  // .Trim() - removes whitespace from both ends of a string  
+  // .Trim() - removes whitespace from both ends of a string and in between 
   updateQuery = (query) => {
     this.setState(() => ({
       query: query.trim()
@@ -30,6 +30,19 @@ class ListContacts extends Component {
   clearQuery = () => {
     this.updateQuery('')
   }
+
+  // handleClick to open hotel websites - in progress
+  handleClick = (e) => {
+    e.preventDefault()
+    // e: this.props.contact[0].handle;
+    
+    console.log('this is:', this.props.contacts[0].handle);
+  }
+
+
+
+
+
   render() {
     // Destructuring State and Props
     const { query } = this.state
@@ -48,6 +61,7 @@ class ListContacts extends Component {
     return (
       <div className='list-contacts'>
         {/* {JSON.stringify(this.state)}  testing value as I type */}
+        
         <div className='list-contacts-top'>
           <input
             className='search-contacts'
@@ -62,7 +76,7 @@ class ListContacts extends Component {
             onChange={(event) => this.updateQuery(event.target.value)}
           />
           <Link
-            to='/create'
+            to='/newhotel'
             className='add-contact'
           >Add Contact</Link>
         </div>
@@ -99,7 +113,10 @@ class ListContacts extends Component {
                 }}
               ></div>
               <div className='contact-details'>
-                <p><b>Hotel Website:</b>&nbsp;<span className='contact-website'>{contact.handle}</span></p>
+                <p>
+                  <b>Hotel Website:</b>&nbsp;<button onClick={this.handleClick} className='contact-website'>{contact.handle}</button>
+                  
+                </p>
                 <p><b>Date Visited:</b>&nbsp;<span className='contact-website'>{contact.date}</span></p>
                 <p><b>Hotel Description:</b> &nbsp;<span className='contact-website'>{contact.description}</span></p>
               </div>
