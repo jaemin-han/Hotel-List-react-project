@@ -78,7 +78,10 @@ class ListContacts extends Component {
           <Link
             to='/newhotel'
             className='add-contact'
-          >Add Contact</Link>
+          >
+          <span className='add-like'></span>
+          <h4>Add Hotel</h4>
+          </Link>
         </div>
 
         {showingContacts.length !== contacts.length && (

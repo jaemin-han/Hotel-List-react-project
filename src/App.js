@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import ListContacts from './ListContacts'
-import * as ContactsAPI from './utils/ContactsAPI'
-import CreateContact from './CreateContact'
+import ListHotels from './ListHotels'
+import * as HotelsAPI from './utils/HotelsAPI'
+import CreateHotel from './CreateHotel'
 import { Route } from 'react-router-dom'
 
 class App extends Component {
@@ -9,13 +9,17 @@ class App extends Component {
     contacts: []
   }
   componentDidMount() {
-    ContactsAPI.getAll()
+    // Send Ajax Request to my server / user database (contacts.js)
+    HotelsAPI.getAll()
       .then((contacts) => {
         this.setState(() => ({ contacts }))
+        // When the data is returned, setState() is called and updates the hotel data and its properties
+        // Since the state has changed, render() gets called again. 
+        // Re-renders the page, but now this.state.hotel (contact info) has values.
       })
   }
 
-  // method (removeContact) living in app and not in ListContacts is because the data lives in the componentDidMount
+  // method (removeContact) living in app and not in ListHotels is because the data lives in the componentDidMount
   removeContact = (contact) => {
     // Passing in a function and returning an object. Object that is returned is going to merge with the currentState.
     // First argument to the function - pass current state.
@@ -27,11 +31,11 @@ class App extends Component {
         return c.id !== contact.id
       })
     }))
-    ContactsAPI.remove(contact)
+    HotelsAPI.remove(contact)
   }
 
-  createContact = (contact) => {
-    ContactsAPI.create(contact)
+  CreateHotel = (contact) => {
+    HotelsAPI.create(contact)
       .then((contact) => {
         this.setState((currentState) => ({ contacts: currentState.contacts.concat([contact]) }))
       })
@@ -51,15 +55,15 @@ class App extends Component {
     return (
       <div>
         <Route exact path='/' render={() => (
-          <ListContacts
+          <ListHotels
             // function invocation
             // Pass data as argument when invoking the function 
             // Data to a component - pass data as 'prop'
-            // Pass 'contacts' state data from the ContactsAPI
+            // Pass 'contacts' state data from the HotelsAPI
             contacts={contacts}
             // Pass function down to invoke later on
             // onDeleteContact property that will reference removeContact method
-            // Inside ListContacts component, invoke this onDeleteContact property
+            // Inside ListHotels component, invoke this onDeleteContact property
             onDeleteContact={this.removeContact}
           />
         )} />
@@ -67,9 +71,9 @@ class App extends Component {
 
         {/* <Modal> */}
           <Route path='/newhotel' render={({ history }) => (
-            <CreateContact
-              onCreateContact={(contact) => {
-                this.createContact(contact)
+            <CreateHotel
+              onCreateHotel={(contact) => {
+                this.CreateHotel(contact)
                 history.push('/')
               }}
             />
