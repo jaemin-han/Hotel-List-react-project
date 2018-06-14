@@ -102,11 +102,12 @@ class ImageInput extends React.Component {
           onChange={this.handleFileChange}
           style={{
             position: 'absolute',
+            marginTop: '50px',
             top: 0,
             left: 0,
             width: '100%',
-            height: '100%',
-            opacity: 0
+            // height: '100%',
+            // opacity: 0
           }}
         />
       </div>

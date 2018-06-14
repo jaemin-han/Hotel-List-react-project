@@ -53,7 +53,7 @@ body, .app {
   background-size: 32px 32px;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 50%; }
+  cursor: pointer; }
 
 .create-contact-details input {
   width: 100%;
@@ -67,13 +67,19 @@ body, .app {
   outline: 0; }
 
 .create-contact-details button {
-  margin-top: 20px;
-  background: #cccccc;
+  margin-top: 80px;
   padding: 10px;
   text-transform: uppercase;
-  font-size: inherit;
   border: none;
-  outline: 0; }
+  outline: 0;
+  width: 100%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: #015e9f; }
 
 /* CSS Testing - scss? alternatives? */
 /* ListContacts */
@@ -81,7 +87,7 @@ body, .app {
   display: flex;
   justify-content: space-evenly; }
 
-.search-contacts, .search-contacts .confirm-hotel {
+.search-contacts {
   width: 80%;
   padding: 20px 20px 20px 30px;
   margin-top: 30px;
@@ -94,7 +100,7 @@ body, .app {
   font-size: 1.2em;
   border: none;
   outline: none; }
-  .search-contacts:hover, .search-contacts .confirm-hotel:hover {
+  .search-contacts:hover {
     border: none;
     box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
 
@@ -118,7 +124,8 @@ body, .app {
   cursor: default;
   padding: 0 16px; }
   .add-contact h4 {
-    color: #ffffff; }
+    color: #ffffff;
+    text-decoration: none; }
   .add-contact:hover {
     border: none;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }

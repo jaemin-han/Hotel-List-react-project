@@ -70,7 +70,7 @@ body, .app {
   background-size: 32px 32px;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 50%;
+  cursor: pointer;
 }
 .create-contact-details input {
   width: 100%;
@@ -84,13 +84,19 @@ body, .app {
   outline: 0;
 }
 .create-contact-details button {
-  margin-top: 20px;
-  background: $color-gray-light;
+  margin-top: 80px;
   padding: 10px;
   text-transform: uppercase;
-  font-size: inherit;
   border: none;
   outline: 0;
+  width: 100%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  transition: box-shadow 200ms cubic-bezier(0.4,0.0,0.2,1);
+  border-radius: 2px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: $color-link;
 }
 /* CSS Testing - scss? alternatives? */
 /* ListContacts */
@@ -121,9 +127,6 @@ body, .app {
     box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
   }
 
-  .confirm-hotel {
-    @extend .search-contacts;
-  }
 }
 .add-like {
   display: flex;
@@ -147,6 +150,7 @@ body, .app {
 
   h4 {
     color: $color-white;
+    text-decoration: none;
   }
 
   &:hover {
