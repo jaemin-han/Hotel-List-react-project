@@ -30,7 +30,7 @@ class App extends Component {
     HotelsAPI.remove(contact)
   }
 
-  CreateHotel = (contact) => {
+  createHotel = (contact) => {
     HotelsAPI.create(contact)
       .then((contact) => {
         this.setState((currentState) => ({ contacts: currentState.contacts.concat([contact]) }))
@@ -68,8 +68,8 @@ class App extends Component {
         {/* <Modal> */}
           <Route path='/newhotel' render={({ history }) => (
             <CreateHotel
-              onCreateHotel={(contact) => {
-                this.CreateHotel(contact)
+              onCreateContact={(contact) => {
+                this.createHotel(contact)
                 history.push('/')
               }}
             />
