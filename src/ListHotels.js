@@ -117,7 +117,7 @@ class ListContacts extends Component {
               ></div>
               <div className='contact-details'>
                 <p>
-                  <b>Hotel Website:</b>&nbsp;<button onClick={this.handleClick} className='contact-website'>{contact.handle}</button>
+                  <b>Hotel Website:</b>&nbsp;<button onClick={this.handleClick} className='contact-website'>{contact.website}</button>
                   
                 </p>
                 <p><b>Date Visited:</b>&nbsp;<span className='contact-website'>{contact.date}</span></p>

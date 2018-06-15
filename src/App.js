@@ -9,13 +9,9 @@ class App extends Component {
     contacts: []
   }
   componentDidMount() {
-    // Send Ajax Request to my server / user database (contacts.js)
     HotelsAPI.getAll()
       .then((contacts) => {
         this.setState(() => ({ contacts }))
-        // When the data is returned, setState() is called and updates the hotel data and its properties
-        // Since the state has changed, render() gets called again. 
-        // Re-renders the page, but now this.state.hotel (contact info) has values.
       })
   }
 
@@ -34,7 +30,7 @@ class App extends Component {
     HotelsAPI.remove(contact)
   }
 
-  CreateHotel = (contact) => {
+  createHotel = (contact) => {
     HotelsAPI.create(contact)
       .then((contact) => {
         this.setState((currentState) => ({ contacts: currentState.contacts.concat([contact]) }))
@@ -67,15 +63,18 @@ class App extends Component {
             onDeleteContact={this.removeContact}
           />
         )} />
-        <Route path='/newhotel' render={({ history }) => (
-          <CreateHotel
-            onCreateHotel={(contact) => {
-              this.CreateHotel(contact)
-              history.push('/')
-            }}
-          />
-        )} />
 
+
+        {/* <Modal> */}
+          <Route path='/newhotel' render={({ history }) => (
+            <CreateHotel
+              onCreateContact={(contact) => {
+                this.createHotel(contact)
+                history.push('/')
+              }}
+            />
+          )} />
+        {/* </Modal> */}
 
       </div>
     )
