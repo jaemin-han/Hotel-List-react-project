@@ -43,13 +43,13 @@ app.delete('/contacts/:id', (req, res) => {
 })
 
 app.post('/contacts', bodyParser.json(), (req, res) => {
-  const { name, handle, date, description } = req.body
+  const { name, website, date, description } = req.body
 
-  if (name && handle && date && description) {
+  if (name && website && date && description) {
     res.send(contacts.add(req.token, req.body))
   } else {
     res.status(403).send({
-      error: 'Please provide both a name and an handle address'
+      error: 'Please provide both a name and an website address'
     })
   }
 })

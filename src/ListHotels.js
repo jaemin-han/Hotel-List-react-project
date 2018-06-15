@@ -32,12 +32,12 @@ class ListContacts extends Component {
   }
 
   // handleClick to open hotel websites - in progress
-  handleClick = (e) => {
-    e.preventDefault()
-    // e: this.props.contact[0].handle;
+  // handleClick = (e) => {
+  //   e.preventDefault()
+  //   // e: this.props.contact[0].handle;
     
-    console.log('this is:', this.props.contacts[0].handle);
-  }
+  //   console.log('this is:', this.props.contacts[0].handle);
+  // }
 
 
 
@@ -114,7 +114,7 @@ class ListContacts extends Component {
               ></div>
               <div className='contact-details'>
                 <p>
-                  <b>Hotel Website:</b>&nbsp;<button onClick={this.handleClick} className='contact-website'>{contact.handle}</button>
+                  <b>Hotel Website:</b>&nbsp;<button onClick={this.handleClick} className='contact-website'>{contact.website}</button>
                   
                 </p>
                 <p><b>Date Visited:</b>&nbsp;<span className='contact-website'>{contact.date}</span></p>
