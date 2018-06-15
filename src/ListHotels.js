@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+// import ModalAbout from './ModalAbout';
+import { Link } from 'react-router-dom';
 
 class ListContacts extends Component {
   // Adding propTypes property on class - same object
@@ -16,8 +17,16 @@ class ListContacts extends Component {
 
   // Adding state property to the component style
   state = {
-    query: ''
+    query: '',
+    isOpen: false
   }
+
+  // Modal on ListHotel Page
+  // toggleModal = () => {
+  //   this.setState({
+  //     isOPen: !this.state.isOpen
+  //   })
+  // }
 
   // Updating the state (value) below
   // Take in 'query'
@@ -35,13 +44,9 @@ class ListContacts extends Component {
   handleClick = (e) => {
     e.preventDefault()
     // e: this.props.contact[0].handle;
-    
+
     console.log('this is:', this.props.contacts[0].handle);
   }
-
-
-
-
 
   render() {
     // Destructuring State and Props
@@ -83,6 +88,17 @@ class ListContacts extends Component {
           <h4>Add Hotel</h4>
           </Link>
         </div>
+
+        {/* <div>
+          <button onClick={this.toggleModal}>
+            Open the modal
+          </button>
+
+          <ModalAbout show={this.state.isOpen}
+            onClose={this.toggleModal}>
+            `Here's some content for the modal`
+          </ModalAbout>
+        </div> */}
 
         {showingContacts.length !== contacts.length && (
           <div className='showing-contacts'>

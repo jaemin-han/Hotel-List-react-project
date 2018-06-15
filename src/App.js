@@ -1,18 +1,19 @@
-import React, { Component } from 'react'
-import ListHotels from './ListHotels'
-import * as HotelsAPI from './utils/HotelsAPI'
-import CreateHotel from './CreateHotel'
-import { Route } from 'react-router-dom'
+import React, { Component } from 'react';
+import ListHotels from './ListHotels';
+import * as HotelsAPI from './utils/HotelsAPI';
+import CreateHotel from './CreateHotel';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   state = {
     contacts: []
   }
+  
   componentDidMount() {
     HotelsAPI.getAll()
       .then((contacts) => {
         this.setState(() => ({ contacts }))
-      })
+      });
   }
 
   // method (removeContact) living in app and not in ListHotels is because the data lives in the componentDidMount
