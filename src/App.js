@@ -42,8 +42,6 @@ class App extends Component {
   // The component is able to change its own internal state using this.setState(). Each time state is changed, React knows and will call 'render()'
   // to re-render the component. This allows for fast, efficient updates to app's UI
 
-
-  // Creating different Routes
   render() {
 
     // Get all state and prop perperties
@@ -51,6 +49,7 @@ class App extends Component {
 
     return (
       <div>
+        {/* Creating different Routes */}
         <Route exact path='/' render={() => (
           <ListHotels
             // function invocation
@@ -63,6 +62,7 @@ class App extends Component {
             // Inside ListHotels component, invoke this onDeleteContact property
             onDeleteContact={this.removeContact}
           />
+          
         )} />
 
 

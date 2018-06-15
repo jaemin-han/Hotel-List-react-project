@@ -245,3 +245,21 @@ body, .app {
   outline: none;
   cursor: pointer;
 }
+
+.modal-container {
+  position: 'fixed';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: 'rgba(0,0,0,0.3)';
+  padding: 50;
+}
+.modal-body {
+  background-color: '#fff';
+  border-radius: 5;
+  width: 500;
+  height: 300;
+  margin: 0 auto;
+  padding: 30;
+}

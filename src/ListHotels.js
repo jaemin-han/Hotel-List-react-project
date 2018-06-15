@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import ModalAbout from './ModalAbout';
+import ModalAbout from './ModalAbout';
 import { Link } from 'react-router-dom';
 
 class ListContacts extends Component {
@@ -21,12 +21,12 @@ class ListContacts extends Component {
     isOpen: false
   }
 
-  // Modal on ListHotel Page
-  // toggleModal = () => {
-  //   this.setState({
-  //     isOPen: !this.state.isOpen
-  //   })
-  // }
+  // Main modal on List Hotel
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
 
   // Updating the state (value) below
   // Take in 'query'
@@ -50,7 +50,7 @@ class ListContacts extends Component {
 
   render() {
     // Destructuring State and Props
-    const { query } = this.state
+    const { query, isOpen } = this.state
     const { contacts, onDeleteContact } = this.props
 
     const showingContacts = query === ''
@@ -89,16 +89,16 @@ class ListContacts extends Component {
           </Link>
         </div>
 
-        {/* <div>
+
+        <div>
           <button onClick={this.toggleModal}>
-            Open the modal
+            PLEASE OPEN, Modal.
           </button>
 
-          <ModalAbout show={this.state.isOpen}
-            onClose={this.toggleModal}>
-            `Here's some content for the modal`
+          <ModalAbout show={isOpen} onClose={this.toggleModal}>
+            'Check this out.'
           </ModalAbout>
-        </div> */}
+        </div>
 
         {showingContacts.length !== contacts.length && (
           <div className='showing-contacts'>
@@ -120,7 +120,6 @@ class ListContacts extends Component {
                     Remove
                 </button>
               </div>
-
 
               <div
                 className='contact-avatar'
