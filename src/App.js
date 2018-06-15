@@ -67,18 +67,15 @@ class App extends Component {
             onDeleteContact={this.removeContact}
           />
         )} />
+        <Route path='/newhotel' render={({ history }) => (
+          <CreateHotel
+            onCreateHotel={(contact) => {
+              this.CreateHotel(contact)
+              history.push('/')
+            }}
+          />
+        )} />
 
-
-        {/* <Modal> */}
-          <Route path='/newhotel' render={({ history }) => (
-            <CreateHotel
-              onCreateHotel={(contact) => {
-                this.CreateHotel(contact)
-                history.push('/')
-              }}
-            />
-          )} />
-        {/* </Modal> */}
 
       </div>
     )
