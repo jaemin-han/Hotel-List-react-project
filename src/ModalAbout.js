@@ -3,14 +3,19 @@ import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 
 class ModalAbout extends Component {
+
+    static propTypes = {
+        onClose: PropTypes.func.isRequired,
+        show: PropTypes.bool,
+        children: PropTypes.node
+      };
+
   render() {
     // Show nothing if `show` is false
     if(!this.props.show) {
       return null;
     }
 
-
-    // The gray background
     const backdropStyle = {
         position: 'fixed',
         top: 0,
@@ -21,7 +26,6 @@ class ModalAbout extends Component {
         padding: 50
       };
   
-      // The modal "window"
       const modalStyle = {
         backgroundColor: '#fff',
         borderRadius: 5,
@@ -48,10 +52,6 @@ class ModalAbout extends Component {
   }
 }
 
-ModalAbout.propTypes = {
-  onClose: PropTypes.func.isRequired,
-  show: PropTypes.bool,
-  children: PropTypes.node
-};
+
 
 export default ModalAbout;
