@@ -16,6 +16,7 @@ class ModalAbout extends Component {
       return null;
     }
 
+    
     const backdropStyle = {
         position: 'fixed',
         top: 0,
@@ -25,7 +26,6 @@ class ModalAbout extends Component {
         backgroundColor: 'rgba(0,0,0,0.3)',
         padding: 50
       };
-  
       const modalStyle = {
         backgroundColor: '#fff',
         borderRadius: 5,
@@ -34,7 +34,6 @@ class ModalAbout extends Component {
         margin: '0 auto',
         padding: 30
       };
-
 
     return (
       <div className="modal-container" style={backdropStyle}>

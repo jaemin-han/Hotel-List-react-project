@@ -92,11 +92,11 @@ class ListContacts extends Component {
 
         <div>
           <button onClick={this.toggleModal}>
-            PLEASE OPEN, Modal.
+            About This Website
           </button>
 
           <ModalAbout show={isOpen} onClose={this.toggleModal}>
-            'Check this out.'
+            Modal Body
           </ModalAbout>
         </div>
 
