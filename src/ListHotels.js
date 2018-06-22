@@ -90,8 +90,8 @@ class ListContacts extends Component {
         </div>
 
 
-        <div>
-          <button onClick={this.toggleModal}>
+        <div className="modal-container">
+          <button className="modal-button" onClick={this.toggleModal}>
             About This Website
           </button>
 
