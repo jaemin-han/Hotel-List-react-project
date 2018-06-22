@@ -96,7 +96,7 @@ class ListContacts extends Component {
           </button>
 
           <ModalAbout show={isOpen} onClose={this.toggleModal}>
-            Modal Body
+            <div className="modal-header">Modal Body</div>
           </ModalAbout>
         </div>
 

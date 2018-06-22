@@ -255,20 +255,24 @@ body, .app {
   padding: 50;
 }
 .modal-body {
-  background-color: '#fff';
-  border-radius: 5;
-  width: 500;
-  height: 300;
-  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  width: 900px;
+  height: 800px;
+  margin: 0px auto;
   padding: 30;
 }
 .modal-container {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  // margin-top: 30px;
 }
 .modal-button {
   background: #015e9f;
   padding: 30px;
   color: white;
+}
+.modal-header {
+  display: flex;
+  justify-content: center;
 }
