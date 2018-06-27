@@ -1,3 +1,42 @@
+{
+    type: 'ADD_TODO';
+    todo: {
+        id: 0;
+        name: 'Learn Redux';
+        complete: false;
+
+    }
+}
+
+{
+    type: 'REMOVE_TODO';
+    id: 0;
+}
+
+{
+    type: 'TOGGLE_TODO';
+    id: 0;
+}
+
+{
+    type: 'TOGGLE_TODO';
+    id: 0;
+}
+
+{
+    type: 'ADD_GOAL';
+    goal: {
+        id: 0;
+        name: 'Run a Marathon';
+}
+}
+
+{
+    type: 'REMOVE_GOAL';
+    id: 0;
+}
+  
+
 // Charateristics of a Pure Function
 // 1. They always return the same result if they same arguments are passed in.
 // 2. They depend only on the arguments passed into them.
@@ -10,6 +49,8 @@ function createStore (reducer) {
     // 3. Listen to changes on the State
     // 4. Update the state
 
+    // Once dispatch... pass in action in the action, this 'state' will be overwritten
+    // Internal State
     let state
 
     // Array of functions
@@ -29,15 +70,18 @@ function createStore (reducer) {
         return () => {
             // 4. Filter 'listeners' array of functions
             // 5. Remove the initial function that was passed in ('listener') when user first invoked 'subscribe'
-            // Return 'True' if specific listener 'l' that is looping over does not match 'listener'
+            // Return 'True' if specific listener 'l' that is looping over does not match 'listener'.
             listeners = listeners.filter((l) => l !== listener)
         }
     }
 
+
     const dispatch = (action) => {
         // Call todos
+        // Passing in root reducer... state and action which will give a brand new 'state'
         state = reducer(state, action)
         // loop over listeners and invoke them -- state changed
+        // Loop through listeners and invoke function, letting them know that the state is now changed
         listeners.forEach((listener) => listener())
     }
 
@@ -92,7 +136,7 @@ function removeGoalAction (id) {
     }
 }
 
-// Reducer function
+// Reducer function (Pure Function)
 function todos (state = [], action) {
     switch(action.type) {
     case ADD_TODO :
